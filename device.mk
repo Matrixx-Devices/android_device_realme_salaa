@@ -202,6 +202,7 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
     $(LOCAL_PATH)/overlay-matrixx
 
 PRODUCT_PACKAGES += \
+	SalaaApertureOverlay \
     SalaaFrameworksOverlay \
     SalaaOplusDozeOverlay \
     SalaaSettingsOverlay \
