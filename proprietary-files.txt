@@ -1174,11 +1174,7 @@ vendor/etc/init/chipinfo_init.rc
 
 # DMC
 vendor/bin/dmc_core
-vendor/bin/mtk_pkm_service
 vendor/etc/init/dmc_core.rc
-vendor/etc/init/mtk_pkm_service.rc
-vendor/lib/libpkm.so
-vendor/lib64/libpkm.so
 vendor/lib64/vendor.mediatek.hardware.dmc@1.0.so
 vendor/lib64/vendor.mediatek.hardware.dmc@1.1.so
 vendor/lib64/vendor.mediatek.hardware.dmc@1.2.so
