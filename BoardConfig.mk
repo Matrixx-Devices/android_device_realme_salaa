@@ -55,7 +55,6 @@ BOARD_MKBOOTIMG_ARGS += --board ""
 TARGET_SCREEN_DENSITY := 480
 
 # Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_salaa
 TARGET_RECOVERY_DEVICE_MODULES := libinit_salaa
 
 # Kernel
