@@ -65,6 +65,10 @@ function blob_fixup {
             "${PATCHELF}" --replace-needed "libavservices_minijail_vendor.so" "libavservices_minijail.so" "${2}"
             "${PATCHELF}" --add-needed "libstagefright_foundation-v33.so" "${2}"
             ;;
+        vendor/bin/hw/mtkfusionrild)
+            [ "$2" = "" ] && return 0
+            "${PATCHELF}" --add-needed "libutils-v32.so" "${2}"
+            ;;
         vendor/bin/mnld|vendor/lib*/libcam.utils.sensorprovider.so|vendor/lib*/libaalservice.so|vendor/lib64/hw/android.hardware.sensors@2.X-subhal-mediatek.so)
             [ "$2" = "" ] && return 0
             grep -q "android.hardware.sensors@1.0-convert-shared.so" "${2}" || "${PATCHELF}" --add-needed "android.hardware.sensors@1.0-convert-shared.so" "${2}"
