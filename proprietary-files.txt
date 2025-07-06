@@ -41,13 +41,9 @@ odm/lib/soundfx/libhaptic_effect.so
 odm/lib/libawinicsmartpaparse.so
 odm/lib64/libawinicsmartpaparse.so
 vendor/bin/atci_service
-vendor/bin/atcid
-vendor/bin/audiocmdservice_atci
 vendor/bin/mt6660_calibration
 vendor/bin/rt5512_calibration
 vendor/etc/init/atci_service.rc
-vendor/etc/init/atcid.rc
-vendor/etc/init/audiocmdservice_atci.rc
 vendor/etc/aurisys_config.xml
 vendor/etc/aurisys_config_hifi3.xml
 vendor/lib/soundfx/libaudiopreprocessing_mtk.so
@@ -131,7 +127,6 @@ vendor/lib64/libvow_ap_test_dd.so
 vendor/lib64/libvow_ap_test_ha.so
 vendor/lib64/libvow_ap_test_hh.so
 vendor/lib64/libvow_ap_test_nn.so
-vendor/lib64/vendor.mediatek.hardware.atci@1.0.so
 
 # Audio (Hardware)
 vendor/lib/hw/android.hardware.audio@7.0-impl-mediatek.so
