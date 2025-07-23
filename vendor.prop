@@ -231,6 +231,9 @@ ro.lmk.thrashing_limit_decay=50
 ro.lmk.swap_util_max=90
 ro.lmk.kill_timeout_ms=100
 
+# Launcher
+ro.launcher.blur.appLaunch=0
+
 # TEE
 ro.mtk_key_manager_support=1
 ro.hardware.kmsetkey=trustonic
