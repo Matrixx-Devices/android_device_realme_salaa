@@ -1,22 +1,10 @@
 /*
  * Copyright (C) 2018-2019 The LineageOS Project
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 #include "Light.h"
-
-#include <android-base/properties.h>
 
 #include <fstream>
 
@@ -82,11 +70,14 @@ static uint32_t getBrightness(const HwLightState& state) {
 }
 
 static inline uint32_t scaleBrightness(uint32_t brightness, uint32_t maxBrightness) {
-    if (brightness == 0) {
-        return 0;
-    }
+    LOG(DEBUG) << "Received brightness: " << brightness;
 
-    return (brightness - 1) * (maxBrightness - 1) / (0xFF - 1) + 1;
+    if (maxBrightness == 4095)
+        return brightness_table_0xfff[brightness];
+    if (maxBrightness == 2047)
+        return brightness_table_0x7ff[brightness];
+
+    return brightness;
 }
 
 static inline uint32_t getScaledBrightness(const HwLightState& state, uint32_t maxBrightness) {
@@ -95,6 +86,7 @@ static inline uint32_t getScaledBrightness(const HwLightState& state, uint32_t m
 
 static void handleBacklight(const HwLightState& state) {
     uint32_t brightness = getScaledBrightness(state, getMaxBrightness(LCD_LED MAX_BRIGHTNESS));
+    LOG(DEBUG) << "Setting brightness: " << brightness;
     set(LCD_LED BRIGHTNESS, brightness);
 }
 
