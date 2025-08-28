@@ -1,32 +1,32 @@
 [
   {
     "remote"      : "github",
-    "repository"  : "PixelOS-Devices/vendor_realme_salaa",
-    "branch"      : "fourteen",
+    "repository"  : "crdroidandroid/proprietary_vendor_realme_salaa",
+    "branch"      : "15.0",
     "target_path" : "vendor/realme/salaa"
   },
   {
     "remote"      : "github",
     "repository"  : "LineageOS/android_hardware_mediatek",
-    "branch"      : "lineage-22.1",
+    "branch"      : "lineage-22.2",
     "target_path" : "hardware/mediatek"
   },
   {
     "remote"      : "github",
-    "repository"  : "stormbreaker-project/kernel_realme_salaa",
-    "branch"      : "14",
-    "target_path" : "kernel/realme/mt6785"
+    "repository"  : "crdroidandroid/android_kernel_realme_salaa",
+    "branch"      : "15.0",
+    "target_path" : "kernel/realme/salaa"
   },
   {
     "remote"      : "github",
     "repository"  : "LineageOS/android_device_mediatek_sepolicy_vndr",
-    "branch"      : "lineage-22.1",
+    "branch"      : "lineage-22.2",
     "target_path" : "device/mediatek/sepolicy_vndr"
   },
   {
     "remote"      : "github",
     "repository"  : "LineageOS/android_hardware_oplus",
-    "branch"      : "lineage-22.1",
+    "branch"      : "lineage-22.2",
     "target_path" : "hardware/oplus"
   }
 ]
