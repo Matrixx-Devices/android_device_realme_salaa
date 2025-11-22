@@ -66,8 +66,7 @@ on charger
     chown system system /mnt/vendor/nvcfg
     chmod 0771 /mnt/vendor/nvcfg
     restorecon_recursive /mnt/vendor/nvcfg
-    write /sys/devices/platform/battery_meter/FG_daemon_log_level 7
-    write /sys/bus/platform/devices/battery/FG_daemon_log_level 7
+    
     # Permissions for System Server and daemons.
     chown system system /sys/power/autosleep
     chown system system /sys/power/state
@@ -1044,23 +1043,6 @@ on property:sys.boot_completed=1
 
     write /sys/devices/virtual/oplus_chg/usb/otg_switch 1
 
-# Battery info
-on property:persist.vendor.mediatek.fg.disable=1
-    write /sys/devices/platform/battery_meter/FG_daemon_disable 1
-    write /sys/bus/platform/devices/battery/FG_daemon_disable 1
-
-on property:persist.vendor.mediatek.fg.force25c=1
-    write /sys/devices/platform/battery_meter/FG_drv_force25c 1
-    write /sys/bus/platform/devices/battery/Battery_Temperature 25
-
-on property:persist.vendor.mediatek.fg.force25c=0
-    write /sys/devices/platform/battery_meter/FG_drv_force25c 0
-    write /sys/bus/platform/devices/battery/Battery_Temperature 65535
-
-on property:persist.vendor.mediatek.fg.log.enable=1
-    write /sys/devices/platform/battery_meter/FG_daemon_log_level 7
-    write /sys/bus/platform/devices/battery/FG_daemon_log_level 7
-    write /proc/sys/kernel/printk 8
 #ifdef OPLUS_FEATURE_TP_BSPFWUPDATE
 
 #laichenhui@bsp.Storage.Ufs 2018-08-21,Add interface to get proper fw
